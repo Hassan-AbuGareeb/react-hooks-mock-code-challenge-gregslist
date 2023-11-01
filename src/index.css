@@ -13,9 +13,20 @@ header {
   border-bottom: 1px #ccc solid;
   background: #eee;
   padding: 1rem;
+}
+
+.header {
+  border-bottom: 1px #ccc solid;
+  background: #eee;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sort {
+  margin: 10px;
 }
 
 header h1 {

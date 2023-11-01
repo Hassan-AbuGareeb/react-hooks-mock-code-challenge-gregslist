@@ -1,7 +1,7 @@
 import React from "react";
 import ListingCard from "./ListingCard";
 
-function ListingsContainer({ items, setItems, searchValue }) {
+function ListingsContainer({ items, setItems, searchValue, sortValue }) {
   const searchedItems = items.filter((item) => {
     if (
       item.description
@@ -12,7 +12,22 @@ function ListingsContainer({ items, setItems, searchValue }) {
       return true;
     return false;
   });
-  const itemsCards = searchedItems.map((item) => {
+
+  const sortedValues = searchedItems.sort((itemA, itemB) => {
+    const locationA = itemA.location;
+    const locationB = itemB.location;
+    if (sortValue === "ascend") {
+      if (locationA > locationB) return 1;
+      else if (locationA < locationB) return -1;
+      else return 0;
+    } else if (sortValue === "descend") {
+      if (locationA < locationB) return 1;
+      else if (locationA > locationB) return -1;
+      else return 0;
+    } else return 0;
+  });
+
+  const itemsCards = sortedValues.map((item) => {
     return (
       <ListingCard
         id={item.id}
