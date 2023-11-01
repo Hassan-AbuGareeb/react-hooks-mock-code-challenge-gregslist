@@ -29,6 +29,16 @@ header {
   margin: 10px;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.addForm input {
+  margin-right: 10px;
+}
+
 header h1 {
   line-height: 1;
   font-family: serif;
@@ -97,6 +107,7 @@ main {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .card {

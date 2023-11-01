@@ -12,6 +12,10 @@ function App() {
       .then((data) => setItems([...data]));
   }, []);
 
+  function addItem(newItem) {
+    setItems([...items, newItem]);
+  }
+
   return (
     <div className="app">
       <Header
@@ -19,6 +23,7 @@ function App() {
         setItems={setItems}
         setSearch={setSearch}
         setSort={setSort}
+        onAddItem={addItem}
       />
       <ListingsContainer
         items={items}

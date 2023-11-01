@@ -1,8 +1,9 @@
 import React from "react";
 import Search from "./Search";
 import Sort from "./Sort";
+import AddItem from "./AddItem";
 
-function Header({ setSearch, setSort }) {
+function Header({ setSearch, setSort, onAddItem }) {
   return (
     <header>
       <div className="header">
@@ -14,7 +15,10 @@ function Header({ setSearch, setSort }) {
         </h1>
         <Search setSearch={setSearch} />
       </div>
-      <Sort setSort={setSort} />
+      <div className="flex">
+        <Sort setSort={setSort} />
+        <AddItem onAddItem={onAddItem} />
+      </div>
     </header>
   );
 }
